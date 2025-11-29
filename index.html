@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de TI do Gustavo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      color: #e6e9f0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #001f3f;
+      padding: 30px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      color: #1e90ff;
+      font-size: 2.2rem;
+    }
+    header p {
+      color: #b0c4de;
+      font-size: 1.1rem;
+    }
+    nav {
+      margin-top: 15px;
+    }
+    nav a {
+      color: #e6e9f0;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #1e90ff;
+    }
+    .section {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: #0a0a0a;
+      border: 1px solid #1e90ff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(30,144,255,0.4);
+    }
+    .card h2 {
+      margin-top: 0;
+      color: #1e90ff;
+    }
+    .card p, .card ul {
+      color: #dcdcdc;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #1e90ff;
+      background: #001f3f;
+      color: #b0c4de;
+    }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .skill-box {
+      background: #0a0a0a;
+      border: 1px solid #1e90ff;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+    }
+    .skill-box h3 {
+      color: #1e90ff;
+      margin-bottom: 10px;
+    }
+    .btn {
+      display: inline-block;
+      background: #1e90ff;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #4682b4;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #1e90ff;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(30,144,255,0.6);
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfólio de TI do Gustavo</h1>
+    <p>Suporte Técnico • Engenharia de Prompt • Documentação e Automação</p>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Seção Sobre -->
+    <section id="sobre" class="section" style="text-align:center;">
+      <img src="/attachments/ycvkup5SCcEswiZatMfni.jpeg" alt="Foto de perfil de Gustavo" class="profile-pic">
+      <h2>Sobre mim</h2>
+      <p>Sou formado em Análise e Desenvolvimento de Sistemas (2024) e atuo na área de Suporte Técnico. Minha missão é garantir que usuários tenham experiências seguras e eficientes com tecnologia, aplicando engenharia de prompt para acelerar atendimentos, padronizar comunicação e criar documentação clara.</p>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="habilidades" class="section">
+      <h2>Minhas Habilidades</h2>
+      <div class="skills">
+        <div class="skill-box">
+          <h3>Suporte Técnico</h3>
+          <p>Diagnóstico de problemas, atendimento remoto e presencial, resolução de falhas em hardware e software.</p>
+        </div>
+        <div class="skill-box">
+          <h3>Redes e Conectividade</h3>
+          <p>Verificação de rede, configuração de VPN, análise de lentidão em sites e sistemas corporativos.</p>
+        </div>
+        <div class="skill-box">
+          <h3>Documentação</h3>
+          <p>Criação de FAQs, guias rápidos, checklists técnicos e templates de comunicação.</p>
+        </div>
+        <div class="skill-box">
+          <h3>Ferramentas de Call Center</h3>
+          <p>Consulta de configuração no Genesys, análise de volumetria de headset e monitoramento de filas.</p>
+        </div>
+        <div class="skill-box">
+          <h3>Segurança</h3>
+          <p>Orientação sobre criação de senhas fortes, boas práticas de backup e conscientização de usuários.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="section">
+      <h2>Projetos e Exemplos</h2>
+      <div class="card">
+        <h2>Guia de Reinício de Roteador</h2>
+        <p>Passo a passo simples para usuários com problemas de conexão.</p>
+        <ul>
+          <li>Desligar da tomada;</li>
+          <li>Aguardar 30 segundos;</li>
+          <li>Reconectar energia;</li>
+          <li>Testar conexão.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Checklist de Liberação de Máquina</h2>
+        <p>Verificação rápida antes de liberar computadores ao usuário.</p>
+        <ul>
+          <li>Atualizações do SO e antivírus;</li>
+          <li>Drivers e dispositivos OK;</li>
+          <li>Conectividade à rede e VPN;</li>
+          <li>Acesso ao e-mail e sistemas corporativos;</li>
+          <li>Backup habilitado e disco saudável.</li>
+        </ul>
+      </div>
+      <a href="#" class="btn" id="exportPDF">Exportar Portfólio em PDF</a>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="section">
+      <h2>Contato</h2>
+      <p>Quer conhecer mais sobre meu trabalho ou trocar ideias? Entre em contato!</p>
+      <p>Email: <strong>gustavoo.santos@uni9.edu.br</strong></p>
+      <p>LinkedIn: <strong><a href="https://www.linkedin.com/in/gustavo-oliveira-1b4628273" target="_blank">linkedin.com/in/gustavo-oliveira-1b4628273</a></strong></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Gustavo • Portfólio de TI</p>
+  </footer>
+
+  <!-- JS embutido -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    // Atualiza ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Exportar PDF
+    document.getElementById('exportPDF').addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      doc.setFontSize(18);
+      doc.text("Portfólio de TI do Gustavo", 20, 20);
+
+      let y = 40;
+      document.querySelectorAll('.card').forEach((card, i) => {
+        const title = card.querySelector('h2
