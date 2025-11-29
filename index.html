@@ -5,86 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio de TI do Gustavo</title>
   <style>
+    :root {
+      --bg: #000000;
+      --text: #ffffff;
+      --card: #1a1a1a;
+      --border: #ffffff;
+      --accent: #cccccc;
+    }
     body {
       font-family: Arial, sans-serif;
-      background: #000000;
-      color: #e6e9f0;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 0;
     }
     header {
-      background: #001f3f;
+      background: #111111;
       padding: 30px;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      color: #1e90ff;
+      color: var(--text);
       font-size: 2.2rem;
     }
     header p {
-      color: #b0c4de;
+      color: var(--accent);
       font-size: 1.1rem;
     }
     nav {
       margin-top: 15px;
     }
     nav a {
-      color: #e6e9f0;
-      margin: 0 10px;
+      color: var(--text);
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.2rem;
     }
     nav a:hover {
-      color: #1e90ff;
+      color: var(--accent);
     }
     .section {
-      padding: 30px;
+      padding: 40px;
       max-width: 1000px;
       margin: auto;
     }
     .card {
-      background: #0a0a0a;
-      border: 1px solid #1e90ff;
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(30,144,255,0.4);
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
     }
     .card h2 {
       margin-top: 0;
-      color: #1e90ff;
+      color: var(--text);
     }
     .card p, .card ul {
-      color: #dcdcdc;
+      color: var(--accent);
     }
     footer {
       text-align: center;
       padding: 20px;
-      border-top: 1px solid #1e90ff;
-      background: #001f3f;
-      color: #b0c4de;
+      border-top: 1px solid var(--border);
+      background: #111111;
+      color: var(--accent);
     }
-    .skills {
+    .skills, .tools, .certs {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
-    .skill-box {
-      background: #0a0a0a;
-      border: 1px solid #1e90ff;
+    .skill-box, .tool-box, .cert-box {
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 10px;
       padding: 15px;
       text-align: center;
     }
-    .skill-box h3 {
-      color: #1e90ff;
+    .skill-box h3, .tool-box h3, .cert-box h3 {
+      color: var(--text);
       margin-bottom: 10px;
     }
     .btn {
       display: inline-block;
-      background: #1e90ff;
-      color: #fff;
+      background: var(--text);
+      color: var(--bg);
       padding: 10px 18px;
       border-radius: 8px;
       text-decoration: none;
@@ -92,16 +100,32 @@
       margin-top: 10px;
     }
     .btn:hover {
-      background: #4682b4;
+      background: var(--accent);
+      color: var(--bg);
     }
     .profile-pic {
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      border: 3px solid #1e90ff;
+      border: 3px solid var(--border);
       margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(30,144,255,0.6);
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
       object-fit: cover;
+    }
+    /* Ícones de navegação */
+    .icon-nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .icon-nav a {
+      color: var(--text);
+      font-size: 2rem;
+      text-decoration: none;
+    }
+    .icon-nav a:hover {
+      color: var(--accent);
     }
   </style>
 </head>
@@ -109,19 +133,23 @@
   <header>
     <h1>Portfólio de TI do Gustavo</h1>
     <p>Suporte Técnico • Engenharia de Prompt • Documentação e Automação</p>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <!-- Ícones de navegação -->
+    <div class="icon-nav">
+      <a href="#sobre">📖</a>
+      <a href="#habilidades">💻</a>
+      <a href="#ferramentas">🛠️</a>
+      <a href="#certificacoes">🎓</a>
+      <a href="#projetos">📂</a>
+      <a href="#objetivo">🎯</a>
+      <a href="#contato">📧</a>
+    </div>
   </header>
 
   <main>
     <!-- Seção Sobre -->
     <section id="sobre" class="section" style="text-align:center;">
       <img src="/attachments/ycvkup5SCcEswiZatMfni.jpeg" alt="Foto de perfil de Gustavo" class="profile-pic">
-      <h2>Sobre mim</h2>
+      <h2>Resumo Profissional</h2>
       <p>Sou formado em Análise e Desenvolvimento de Sistemas (2024) e atuo na área de Suporte Técnico. Minha missão é garantir que usuários tenham experiências seguras e eficientes com tecnologia, aplicando engenharia de prompt para acelerar atendimentos, padronizar comunicação e criar documentação clara.</p>
     </section>
 
@@ -129,26 +157,33 @@
     <section id="habilidades" class="section">
       <h2>Minhas Habilidades</h2>
       <div class="skills">
-        <div class="skill-box">
-          <h3>Suporte Técnico</h3>
-          <p>Diagnóstico de problemas, atendimento remoto e presencial, resolução de falhas em hardware e software.</p>
-        </div>
-        <div class="skill-box">
-          <h3>Redes e Conectividade</h3>
-          <p>Verificação de rede, configuração de VPN, análise de lentidão em sites e sistemas corporativos.</p>
-        </div>
-        <div class="skill-box">
-          <h3>Documentação</h3>
-          <p>Criação de FAQs, guias rápidos, checklists técnicos e templates de comunicação.</p>
-        </div>
-        <div class="skill-box">
-          <h3>Ferramentas de Call Center</h3>
-          <p>Consulta de configuração no Genesys, análise de volumetria de headset e monitoramento de filas.</p>
-        </div>
-        <div class="skill-box">
-          <h3>Segurança</h3>
-          <p>Orientação sobre criação de senhas fortes, boas práticas de backup e conscientização de usuários.</p>
-        </div>
+        <div class="skill-box"><h3>Suporte Técnico</h3><p>Diagnóstico de problemas, atendimento remoto e presencial.</p></div>
+        <div class="skill-box"><h3>Redes</h3><p>Configuração de VPN, análise de conectividade.</p></div>
+        <div class="skill-box"><h3>Documentação</h3><p>Criação de FAQs, guias rápidos e checklists.</p></div>
+        <div class="skill-box"><h3>Call Center</h3><p>Genesys, análise de volumetria e monitoramento de filas.</p></div>
+        <div class="skill-box"><h3>Segurança</h3><p>Boas práticas de backup e senhas fortes.</p></div>
+      </div>
+    </section>
+
+    <!-- Seção Ferramentas -->
+    <section id="ferramentas" class="section">
+      <h2>Ferramentas que domino</h2>
+      <div class="tools">
+        <div class="tool-box"><h3>Windows & Linux</h3></div>
+        <div class="tool-box"><h3>Office 365</h3></div>
+        <div class="tool-box"><h3>Genesys</h3></div>
+        <div class="tool-box"><h3>VPN & Redes</h3></div>
+        <div class="tool-box"><h3>GitHub</h3></div>
+      </div>
+    </section>
+
+    <!-- Seção Certificações -->
+    <section id="certificacoes" class="section">
+      <h2>Certificações e Cursos</h2>
+      <div class="certs">
+        <div class="cert-box"><h3>ADS - Uni9</h3><p>Formação em Análise e Desenvolvimento de Sistemas (2024).</p></div>
+        <div class="cert-box"><h3>Curso de Redes</h3><p>Configuração e manutenção de redes corporativas.</p></div>
+        <div class="cert-box"><h3>Suporte Técnico Avançado</h3><p>Atendimento e resolução de problemas complexos.</p></div>
       </div>
     </section>
 
@@ -158,53 +193,21 @@
       <div class="card">
         <h2>Guia de Reinício de Roteador</h2>
         <p>Passo a passo simples para usuários com problemas de conexão.</p>
-        <ul>
-          <li>Desligar da tomada;</li>
-          <li>Aguardar 30 segundos;</li>
-          <li>Reconectar energia;</li>
-          <li>Testar conexão.</li>
-        </ul>
       </div>
       <div class="card">
         <h2>Checklist de Liberação de Máquina</h2>
         <p>Verificação rápida antes de liberar computadores ao usuário.</p>
-        <ul>
-          <li>Atualizações do SO e antivírus;</li>
-          <li>Drivers e dispositivos OK;</li>
-          <li>Conectividade à rede e VPN;</li>
-          <li>Acesso ao e-mail e sistemas corporativos;</li>
-          <li>Backup habilitado e disco saudável.</li>
-        </ul>
       </div>
       <a href="#" class="btn" id="exportPDF">Exportar Portfólio em PDF</a>
+    </section>
+
+    <!-- Seção Objetivo -->
+    <section id="objetivo" class="section">
+      <h2>Objetivo Profissional</h2>
+      <p>Meu objetivo é crescer na área de TI, especializando-me em suporte técnico e infraestrutura, além de aplicar engenharia de prompt para otimizar processos e comunicação em ambientes corporativos.</p>
     </section>
 
     <!-- Seção Contato -->
     <section id="contato" class="section">
       <h2>Contato</h2>
-      <p>Quer conhecer mais sobre meu trabalho ou trocar ideias? Entre em contato!</p>
       <p>Email: <strong>gustavoo.santos@uni9.edu.br</strong></p>
-      <p>LinkedIn: <strong><a href="https://www.linkedin.com/in/gustavo-oliveira-1b4628273" target="_blank">linkedin.com/in/gustavo-oliveira-1b4628273</a></strong></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© <span id="year"></span> Gustavo • Portfólio de TI</p>
-  </footer>
-
-  <!-- JS embutido -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script>
-    // Atualiza ano no rodapé
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Exportar PDF
-    document.getElementById('exportPDF').addEventListener('click', () => {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-      doc.setFontSize(18);
-      doc.text("Portfólio de TI do Gustavo", 20, 20);
-
-      let y = 40;
-      document.querySelectorAll('.card').forEach((card, i) => {
-        const title = card.querySelector('h2
