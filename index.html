@@ -1,804 +1,196 @@
-
+ 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Metadados básicos -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="title" content="Portfólio de TI do Gustavo">
-  <meta name="description" content="Portfólio profissional em TI: suporte técnico, documentação, engenharia de prompt e projetos.">
-  <meta name="author" content="Gustavo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio de TI do Gustavo</title>
-
-  <!-- Ícones modernos (Font Awesome) -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <!-- Font Awesome para ícones modernos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Fonte elegante e acessível -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Estilos globais -->
   <style>
     :root {
-      /* Paleta preto e branco com cinzas equilibrados */
       --bg: #000000;
       --text: #ffffff;
-      --muted: #cccccc;
       --card: #121212;
       --border: #ffffff;
-      --soft-border: #2a2a2a;
-      --shadow: rgba(255, 255, 255, 0.15);
-      --focus: #ffffff;
-      --link: #ffffff;
-      --link-hover: #cccccc;
+      --accent: #cccccc;
     }
-
-    /* Reset simples e foco acessível */
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
     }
-
-    a { color: var(--link); text-decoration: none; }
-    a:hover { color: var(--link-hover); }
-
-    /* Skip link para acessibilidade */
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: -999px;
-      background: var(--text);
-      color: var(--bg);
-      padding: 8px 12px;
-      border-radius: 6px;
-      z-index: 9999;
-    }
-    .skip-link:focus {
-      left: 12px;
-      top: 12px;
-      outline: 2px dashed var(--focus);
-      outline-offset: 2px;
-    }
-
-    /* Cabeçalho */
     header {
-      background: #0e0e0e;
-      border-bottom: 1px solid var(--soft-border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      background: #111111;
+      padding: 30px;
+      text-align: center;
     }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .header-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: var(--card);
-      border: 1px solid var(--soft-border);
-      display: grid;
-      place-items: center;
-      box-shadow: 0 4px 12px var(--shadow);
-    }
-    .brand-logo i { font-size: 1.2rem; }
-    .brand-text h1 {
-      font-size: 1.25rem;
+    header h1 {
       margin: 0;
-      letter-spacing: 0.5px;
+      color: var(--text);
+      font-size: 2.2rem;
     }
-    .brand-text p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
+    header p {
+      color: var(--accent);
+      font-size: 1.1rem;
     }
-
-    /* Navegação por ícones */
     .icon-nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      padding: 12px 0 20px;
-      border-top: 1px solid var(--soft-border);
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
     }
-    .icon-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border: 1px solid var(--soft-border);
-      border-radius: 12px;
-      background: #0f0f0f;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    .icon-nav a {
+      color: var(--text);
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: color 0.3s;
     }
-    .icon-link i { font-size: 1.2rem; }
-    .icon-link span { font-weight: 600; font-size: 0.95rem; }
-    .icon-link:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px var(--shadow);
-      border-color: var(--border);
+    .icon-nav a:hover {
+      color: var(--accent);
     }
-    .icon-link:focus {
-      outline: 2px dashed var(--focus);
-      outline-offset: 3px;
-    }
-
-    /* Seções */
-    section {
-      padding: 56px 0;
-      border-bottom: 1px solid var(--soft-border);
-      background: #000;
-    }
-    .section-title {
-      font-size: 1.6rem;
-      margin: 0 0 18px;
-    }
-    .section-subtitle {
-      color: var(--muted);
-      margin: 0 0 24px;
-      font-size: 1rem;
-    }
-
-    /* Cards */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
+    .section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
     }
     .card {
-      grid-column: span 12;
       background: var(--card);
-      border: 1px solid var(--soft-border);
-      border-radius: 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 8px 18px var(--shadow);
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
     }
-    @media (min-width: 720px) {
-      .card.half { grid-column: span 6; }
-      .card.third { grid-column: span 4; }
+    .card h2 {
+      margin-top: 0;
+      color: var(--text);
     }
-    .card h3 {
-      margin: 0 0 12px;
-      font-size: 1.2rem;
+    .card p, .card ul {
+      color: var(--accent);
     }
-    .card p { color: var(--muted); margin: 0 0 10px; }
-    .card ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-    .card ul li {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      color: var(--muted);
-      padding: 6px 0;
-      border-bottom: 1px dashed #1f1f1f;
-    }
-    .card ul li:last-child { border-bottom: none; }
-    .card ul li i { color: var(--text); }
-
-    /* Perfil */
-    .profile {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 18px;
-      align-items: center;
-    }
-    @media (max-width: 520px) {
-      .profile { grid-template-columns: 1fr; text-align: center; }
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      background: #111111;
+      color: var(--accent);
     }
     .profile-pic {
-      width: 120px;
-      height: 120px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
+      border: 3px solid var(--border);
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
       object-fit: cover;
-      border: 2px solid var(--border);
-      box-shadow: 0 8px 20px var(--shadow);
-      background: #090909;
     }
-    .profile-meta {
-      display: grid;
-      gap: 6px;
-    }
-    .meta-row { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); }
-    .meta-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border: 1px solid var(--soft-border);
-      border-radius: 10px;
-      background: #0f0f0f;
-    }
-
-    /* Botões */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+      display: inline-block;
       background: var(--text);
       color: var(--bg);
-      padding: 10px 16px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
     }
     .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px var(--shadow);
+      background: var(--accent);
+      color: var(--bg);
     }
-    .btn:focus {
-      outline: 2px dashed var(--focus);
-      outline-offset: 3px;
-    }
-    .btn.secondary {
-      background: #111111;
-      color: var(--text);
-      border-color: var(--soft-border);
-    }
-
-    /* Tabelas simples */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--card);
-      border: 1px solid var(--soft-border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    th, td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--soft-border);
-      text-align: left;
-      color: var(--muted);
-    }
-    th { color: var(--text); font-weight: 700; }
-    tr:last-child td { border-bottom: none; }
-
-    /* Rodapé */
-    footer {
-      background: #0e0e0e;
-      border-top: 1px solid var(--soft-border);
-      color: var(--muted);
-      padding: 26px 0;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-      align-items: center;
-    }
-    .footer-col {
-      grid-column: span 12;
-    }
-    @media (min-width: 720px) {
-      .footer-col { grid-column: span 4; }
-    }
-    .social {
-      display: flex;
-      gap: 14px;
-    }
-    .social a {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--soft-border);
-      border-radius: 10px;
-      background: #0f0f0f;
-    }
-    .social a:hover { border-color: var(--border); }
-
-    /* Botão voltar ao topo */
-    .to-top {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #111;
-      color: var(--text);
-      border: 1px solid var(--soft-border);
-      box-shadow: 0 6px 18px var(--shadow);
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
-      z-index: 1001;
-    }
-    .to-top.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    /* Destaques visuais */
-    .kpi {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-    @media (max-width: 720px) {
-      .kpi { grid-template-columns: repeat(2, 1fr); }
-    }
-    .kpi-item {
-      background: var(--card);
-      border: 1px solid var(--soft-border);
-      border-radius: 12px;
-      padding: 16px;
-      text-align: center;
-      box-shadow: 0 6px 16px var(--shadow);
-    }
-    .kpi-item .value { font-size: 1.6rem; font-weight: 700; }
-    .kpi-item .label { color: var(--muted); font-size: 0.9rem; }
-
-    /* Breadcrumb simples (status da página) */
-    .breadcrumb {
-      display: flex;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-    }
-    .breadcrumb i { color: var(--text); }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Pular para o conteúdo</a>
-
-  <!-- Cabeçalho com ícones modernos -->
-  <header role="banner" aria-label="Cabeçalho do site">
-    <div class="container">
-      <div class="header-top">
-        <div class="brand" aria-label="Identidade visual">
-          <div class="brand-logo" aria-hidden="true"><i class="fa-solid fa-terminal"></i></div>
-          <div class="brand-text">
-            <h1>Portfólio de TI do Gustavo</h1>
-            <p>Suporte Técnico • Engenharia de Prompt • Documentação</p>
-          </div>
-        </div>
-        <nav aria-label="Navegação principal">
-          <a class="btn secondary" href="#contato"><i class="fa-solid fa-envelope"></i> Contato</a>
-        </nav>
-      </div>
-
-      <nav class="icon-nav" aria-label="Navegação por ícones">
-        <a class="icon-link" href="#sobre"><i class="fa-solid fa-user"></i><span>Sobre</span></a>
-        <a class="icon-link" href="#habilidades"><i class="fa-solid fa-laptop-code"></i><span>Habilidades</span></a>
-        <a class="icon-link" href="#ferramentas"><i class="fa-solid fa-screwdriver-wrench"></i><span>Ferramentas</span></a>
-        <a class="icon-link" href="#certificacoes"><i class="fa-solid fa-graduation-cap"></i><span>Certificações</span></a>
-        <a class="icon-link" href="#projetos"><i class="fa-solid fa-folder-open"></i><span>Projetos</span></a>
-        <a class="icon-link" href="#objetivo"><i class="fa-solid fa-bullseye"></i><span>Objetivo</span></a>
-        <a class="icon-link" href="#depoimentos"><i class="fa-solid fa-comments"></i><span>Depoimentos</span></a>
-        <a class="icon-link" href="#contato"><i class="fa-solid fa-envelope"></i><span>Contato</span></a>
-      </nav>
+  <header>
+    <h1>Portfólio de TI do Gustavo</h1>
+    <p>Suporte Técnico • Engenharia de Prompt • Documentação e Automação</p>
+    <!-- Ícones modernos -->
+    <div class="icon-nav">
+      <a href="#sobre" title="Sobre"><i class="fas fa-user"></i></a>
+      <a href="#habilidades" title="Habilidades"><i class="fas fa-laptop-code"></i></a>
+      <a href="#ferramentas" title="Ferramentas"><i class="fas fa-tools"></i></a>
+      <a href="#certificacoes" title="Certificações"><i class="fas fa-graduation-cap"></i></a>
+      <a href="#projetos" title="Projetos"><i class="fas fa-folder-open"></i></a>
+      <a href="#objetivo" title="Objetivo"><i class="fas fa-bullseye"></i></a>
+      <a href="#contato" title="Contato"><i class="fas fa-envelope"></i></a>
     </div>
   </header>
 
-  <!-- Conteúdo principal -->
-  <main id="main" tabindex="-1">
+  <main>
     <!-- Seção Sobre -->
-    <section id="sobre" aria-labelledby="sobre-title">
-      <div class="container">
-        <div class="breadcrumb"><i class="fa-solid fa-user"></i> <span>Sobre</span></div>
-        <h2 id="sobre-title" class="section-title">Resumo profissional</h2>
-        <p class="section-subtitle">Perfil, objetivos e identidade. Foto de perfil carregada via GitHub Pages para visualização pública.</p>
-
-        <div class="card">
-          <div class="profile">
-            <img src="foto.jpg" alt="Foto de perfil de Gustavo" class="profile-pic" loading="eager">
-            <div class="profile-meta">
-              <p>Formado em Análise e Desenvolvimento de Sistemas (2024). Atuação em Suporte Técnico, documentação clara e engenharia de prompt para acelerar operações, padronizar comunicação e reduzir retrabalho.</p>
-              <div class="meta-row">
-                <div class="meta-item"><i class="fa-solid fa-location-dot"></i> São Paulo, Brasil</div>
-                <div class="meta-item"><i class="fa-solid fa-briefcase"></i> Suporte Técnico</div>
-                <div class="meta-item"><i class="fa-solid fa-shield-halved"></i> Segurança e Boas Práticas</div>
-                <div class="meta-item"><i class="fa-solid fa-clock"></i> Disponível para contato</div>
-              </div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-                <a class="btn" href="#contato"><i class="fa-solid fa-paper-plane"></i> Falar comigo</a>
-                <a class="btn secondary" href="#projetos"><i class="fa-solid fa-diagram-project"></i> Ver projetos</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="kpi" style="margin-top:18px;">
-          <div class="kpi-item">
-            <div class="value">+200</div>
-            <div class="label">Atendimentos de suporte</div>
-          </div>
-          <div class="kpi-item">
-            <div class="value">99%</div>
-            <div class="label">Satisfação de usuários</div>
-          </div>
-          <div class="kpi-item">
-            <div class="value">8</div>
-            <div class="label">Guias/documentos publicados</div>
-          </div>
-          <div class="kpi-item">
-            <div class="value">24h</div>
-            <div class="label">SLA médio de resolução</div>
-          </div>
-        </div>
-      </div>
+    <section id="sobre" class="section" style="text-align:center;">
+      <img src="foto.jpg" alt="Foto de perfil de Gustavo" class="profile-pic">
+      <h2>Resumo Profissional</h2>
+      <p>Sou formado em Análise e Desenvolvimento de Sistemas (2024) e atuo na área de Suporte Técnico. Minha missão é garantir que usuários tenham experiências seguras e eficientes com tecnologia, aplicando engenharia de prompt para acelerar atendimentos, padronizar comunicação e criar documentação clara.</p>
     </section>
 
     <!-- Seção Habilidades -->
-    <section id="habilidades" aria-labelledby="habilidades-title">
-      <div class="container">
-        <div class="breadcrumb"><i class="fa-solid fa-laptop-code"></i> <span>Habilidades</span></div>
-        <h2 id="habilidades-title" class="section-title">Minhas habilidades</h2>
-        <p class="section-subtitle">Competências técnicas e de operação em ambientes corporativos.</p>
-
-        <div class="grid">
-          <div class="card third">
-            <h3><i class="fa-solid fa-headset"></i> Suporte técnico</h3>
-            <ul>
-              <li><i class="fa-regular fa-circle-check"></i> Diagnóstico remoto e presencial</li>
-              <li><i class="fa-regular fa-circle-check"></i> Troubleshooting de hardware e software</li>
-              <li><i class="fa-regular fa-circle-check"></i> Comunicação clara com usuários</li>
-            </ul>
-          </div>
-          <div class="card third">
-            <h3><i class="fa-solid fa-network-wired"></i> Redes e conectividade</h3>
-            <ul>
-              <li><i class="fa-regular fa-circle-check"></i> Verificação de rede e DNS</li>
-              <li><i class="fa-regular fa-circle-check"></i> Configuração de VPN</li>
-              <li><i class="fa-regular fa-circle-check"></i> Análise de lentidão em sistemas</li>
-            </ul>
-          </div>
-          <div class="card third">
-            <h3><i class="fa-solid fa-file-lines"></i> Documentação</h3>
-            <ul>
-              <li><i class="fa-regular fa-circle-check"></i> FAQs e guias rápidos</li>
-              <li><i class="fa-regular fa-circle-check"></i> Checklists técnicos</li>
-              <li><i class="fa-regular fa-circle-check"></i> Templates de comunicação</li>
-            </ul>
-          </div>
-          <div class="card half">
-            <h3><i class="fa-solid fa-shield-halved"></i> Segurança e boas práticas</h3>
-            <ul>
-              <li><i class="fa-regular fa-circle-check"></i> Senhas fortes e MFA</li>
-              <li><i class="fa-regular fa-circle-check"></i> Backup e restauração</li>
-              <li><i class="fa-regular fa-circle-check"></i> Conscientização de usuários</li>
-            </ul>
-          </div>
-          <div class="card half">
-            <h3><i class="fa-solid fa-robot"></i> Engenharia de prompt</h3>
-            <ul>
-              <li><i class="fa-regular fa-circle-check"></i> Padronização de atendimentos</li>
-              <li><i class="fa-regular fa-circle-check"></i> Automação de respostas</li>
-              <li><i class="fa-regular fa-circle-check"></i> Criação de checklists inteligentes</li>
-            </ul>
-          </div>
-        </div>
+    <section id="habilidades" class="section">
+      <h2>Minhas Habilidades</h2>
+      <div class="card">
+        <h2>Suporte Técnico</h2>
+        <p>Diagnóstico de problemas, atendimento remoto e presencial.</p>
+      </div>
+      <div class="card">
+        <h2>Redes</h2>
+        <p>Configuração de VPN, análise de conectividade.</p>
+      </div>
+      <div class="card">
+        <h2>Documentação</h2>
+        <p>Criação de FAQs, guias rápidos e checklists.</p>
       </div>
     </section>
 
     <!-- Seção Ferramentas -->
-    <section id="ferramentas" aria-labelledby="ferramentas-title">
-      <div class="container">
-        <div class="breadcrumb"><i class="fa-solid fa-screwdriver-wrench"></i> <span>Ferramentas</span></div>
-        <h2 id="ferramentas-title" class="section-title">Ferramentas que domino</h2>
-        <p class="section-subtitle">Sistemas, plataformas e ambientes operacionais.</p>
-
-        <div class="grid">
-          <div class="card third">
-            <h3><i class="fa-brands fa-windows"></i> Windows</h3>
-            <p>Configuração, atualizações, políticas e suporte de usuário.</p>
-          </div>
-          <div class="card third">
-            <h3><i class="fa-brands fa-linux"></i> Linux</h3>
-            <p>Ambientes básicos, shells e suporte a serviços essenciais.</p>
-          </div>
-          <div class="card third">
-            <h3><i class="fa-solid fa-cloud"></i> Office 365</h3>
-            <p>Exchange, Teams, SharePoint e colaboração segura.</p>
-          </div>
-          <div class="card third">
-            <h3><i class="fa-solid fa-headset"></i> Genesys</h3>
-            <p>Configuração, monitoramento de filas e volumetria de headset.</p>
-          </div>
-          <div class="card third">
-            <h3><i class="fa-solid fa-lock"></i> VPN & redes</h3>
-            <p>Túnel seguro, troubleshooting e políticas de acesso.</p>
-          </div>
-          <div class="card third">
-            <h3><i class="fa-brands fa-github"></i> GitHub</h3>
-            <p>Versionamento e publicação via GitHub Pages.</p>
-          </div>
-        </div>
-      </div>
+    <section id="ferramentas" class="section">
+      <h2>Ferramentas que domino</h2>
+      <div class="card"><h2>Windows & Linux</h2></div>
+      <div class="card"><h2>Office 365</h2></div>
+      <div class="card"><h2>Genesys</h2></div>
+      <div class="card"><h2>VPN & Redes</h2></div>
+      <div class="card"><h2>GitHub</h2></div>
     </section>
 
     <!-- Seção Certificações -->
-    <section id="certificacoes" aria-labelledby="certificacoes-title">
-      <div class="container">
-        <div class="breadcrumb"><i class="fa-solid fa-graduation-cap"></i> <span>Certificações</span></div>
-        <h2 id="certificacoes-title" class="section-title">Certificações e cursos</h2>
-        <p class="section-subtitle">Formação contínua e aprimoramento técnico.</p>
-
-        <table aria-label="Tabela de certificações">
-          <thead>
-            <tr>
-              <th>Certificação/Curso</th>
-              <th>Instituição</th>
-              <th>Ano</th>
-              <th>Escopo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ADS</td>
-              <td>Uni9</td>
-              <td>2024</td>
-              <td>Desenvolvimento e fundamentos de TI</td>
-            </tr>
-            <tr>
-              <td>Redes corporativas</td>
-              <td>Curso livre</td>
-              <td>—</td>
-              <td>Configuração, VPN e conectividade</td>
-            </tr>
-            <tr>
-              <td>Suporte técnico avançado</td>
-              <td>Curso livre</td>
-              <td>—</td>
-              <td>Atendimento, SLA e troubleshooting</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <section id="certificacoes" class="section">
+      <h2>Certificações e Cursos</h2>
+      <div class="card"><h2>ADS - Uni9</h2><p>Formação em Análise e Desenvolvimento de Sistemas (2024).</p></div>
+      <div class="card"><h2>Curso de Redes</h2><p>Configuração e manutenção de redes corporativas.</p></div>
     </section>
 
     <!-- Seção Projetos -->
-    <section id="projetos" aria-labelledby="projetos-title">
-      <div class="container">
-        <div class="breadcrumb"><i class="fa-solid fa-folder-open"></i> <span>Projetos</span></div>
-        <h2 id="projetos-title" class="section-title">Projetos e exemplos</h2>
-        <p class="section-subtitle">Material prático com foco no usuário e na operação.</p>
-
-        <div class="grid">
-          <div class="card half">
-            <h3><i class="fa-solid fa-wifi"></i> Guia de reinício de roteador</h3>
-            <ul>
-              <li><i class="fa-regular fa-circle-check"></i> Desligar da tomada</li>
-              <li><i class="fa-regular fa-circle-check"></i> Aguardar 30 segundos</li>
-              <li><i class="fa-regular fa-circle-check"></i> Reconectar energia</li>
-              <li><i class="fa-regular fa-circle-check"></i> Testar conexão</li>
-            </ul>
-          </div>
-          <div class="card half">
-            <h3><i class="fa-solid fa-computer"></i> Checklist de liberação de máquina</h3>
-            <ul>
-              <li><i class="fa-regular fa-circle-check"></i> SO e antivírus atualizados</li>
-              <li><i class="fa-regular fa-circle-check"></i> Drivers e dispositivos OK</li>
-              <li><i class="fa-regular fa-circle-check"></i> Rede e VPN funcionais</li>
-              <li><i class="fa-regular fa-circle-check"></i> Email e sistemas acessíveis</li>
-              <li><i class="fa-regular fa-circle-check"></i> Backup habilitado e disco saudável</li>
-            </ul>
-          </div>
-        </div>
-
-        <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
-          <button id="exportPDF" class="btn" aria-label="Exportar portfólio em PDF"><i class="fa-solid fa-file-pdf"></i> Exportar PDF</button>
-          <a class="btn secondary" href="#contato"><i class="fa-solid fa-envelope"></i> Entrar em contato</a>
-        </div>
-      </div>
+    <section id="projetos" class="section">
+      <h2>Projetos e Exemplos</h2>
+      <div class="card"><h2>Guia de Reinício de Roteador</h2></div>
+      <div class="card"><h2>Checklist de Liberação de Máquina</h2></div>
     </section>
 
     <!-- Seção Objetivo -->
-    <section id="objetivo" aria-labelledby="objetivo-title">
-      <div class="container">
-        <div class="breadcrumb"><i class="fa-solid fa-bullseye"></i> <span>Objetivo</span></div>
-        <h2 id="objetivo-title" class="section-title">Objetivo profissional</h2>
-        <p class="section-subtitle">Direção de carreira e foco de atuação.</p>
-
-        <div class="card">
-          <p>Consolidar atuação em Suporte Técnico e Infraestrutura, elevando a experiência do usuário, reduzindo tempos de resposta e aplicando engenharia de prompt para padronizar processos e comunicação em escala.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção Depoimentos -->
-    <section id="depoimentos" aria-labelledby="depoimentos-title">
-      <div class="container">
-        <div class="breadcrumb"><i class="fa-solid fa-comments"></i> <span>Depoimentos</span></div>
-        <h2 id="depoimentos-title" class="section-title">Depoimentos</h2>
-        <p class="section-subtitle">Feedback de colegas e usuários.</p>
-
-        <div class="grid">
-          <div class="card half">
-            <p>"Gustavo resolve problemas com clareza e rapidez. Excelente comunicação e documentação." — Colega de TI</p>
-          </div>
-          <div class="card half">
-            <p>"O atendimento foi objetivo e eficiente. Consegui voltar a trabalhar sem interrupções." — Usuário interno</p>
-          </div>
-        </div>
-      </div>
+    <section id="objetivo" class="section">
+      <h2>Objetivo Profissional</h2>
+      <p>Meu objetivo é crescer na área de TI, especializando-me em suporte técnico e infraestrutura, além de aplicar engenharia de prompt para otimizar processos e comunicação em ambientes corporativos.</p>
     </section>
 
     <!-- Seção Contato -->
-    <section id="contato" aria-labelledby="contato-title">
-      <div class="container">
-        <div class="breadcrumb"><i class="fa-solid fa-envelope"></i> <span>Contato</span></div>
-        <h2 id="contato-title" class="section-title">Fale comigo</h2>
-        <p class="section-subtitle">Entre em contato para conversarmos sobre oportunidades e projetos.</p>
-
-        <div class="grid">
-          <div class="card half">
-            <h3><i class="fa-solid fa-at"></i> Email</h3>
-            <p><strong>gustavoo.santos@uni9.edu.br</strong></p>
-            <a class="btn" href="mailto:gustavoo.santos@uni9.edu.br" aria-label="Enviar email para Gustavo"><i class="fa-solid fa-paper-plane"></i> Enviar email</a>
-          </div>
-          <div class="card half">
-            <h3><i class="fa-brands fa-linkedin"></i> LinkedIn</h3>
-            <p><a href="https://www.linkedin.com/in/gustavo-oliveira-1b4628273" target="_blank" rel="noopener">linkedin.com/in/gustavo-oliveira-1b4628273</a></p>
-            <a class="btn secondary" href="https://www.linkedin.com/in/gustavo-oliveira-1b4628273" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir perfil</a>
-          </div>
-        </div>
-      </div>
+    <section id="contato" class="section">
+      <h2>Contato</h2>
+      <p>Email: <strong>gustavoo.santos@uni9.edu.br</strong></p>
+      <p>LinkedIn: <strong><a href="https://www.linkedin.com/in/gustavo-oliveira-1b4628273" target="_blank">linkedin.com/in/gustavo-oliveira-1b4628273</a></strong></p>
+      <p>Meu site: <strong><a href="https://clixgustavo.github.io/clixgustavo/" target="_blank">clixgustavo.github.io/clixgustavo</a></strong></p>
     </section>
   </main>
 
-  <!-- Rodapé -->
-  <footer role="contentinfo" aria-label="Rodapé">
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <p>© <span id="year"></span> Gustavo • Portfólio de TI</p>
-      </div>
-      <div class="footer-col">
-        <div class="social" aria-label="Redes sociais">
-          <a href="#sobre" title="Topo"><i class="fa-solid fa-chevron-up"></i></a>
-          <a href="mailto:gustavoo.santos@uni9.edu.br" title="Email"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://www.linkedin.com/in/gustavo-oliveira-1b4628273" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <p style="text-align:right;">Feito com foco no usuário e operação</p>
-      </div>
-    </div>
+  <footer>
+    <p>© <span id="year"></span> Gustavo • Portfólio de TI</p>
+    <p>Visite também: <a href="https://clixgustavo.github.io/clixgustavo/" target="_blank">clixgustavo.github.io/clixgustavo</a></p>
   </footer>
 
-  <!-- Botão voltar ao topo -->
-  <button class="to-top" id="toTop" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
-
-  <!-- JS: utilidades, navegação suave, PDF -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
   <script>
-    // Ano automático no rodapé
-    document.addEventListener('DOMContentLoaded', () => {
-      const yearEl = document.getElementById('year');
-      yearEl.textContent = new Date().getFullYear();
-    });
-
-    // Mostrar/ocultar botão "voltar ao topo"
-    (function() {
-      const toTop = document.getElementById('toTop');
-      const onScroll = () => {
-        if (window.scrollY > 320) {
-          toTop.classList.add('show');
-        } else {
-          toTop.classList.remove('show');
-        }
-      };
-      window.addEventListener('scroll', onScroll);
-      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    })();
-
-    // Navegação: realçar ícone ativo conforme seção visível
-    (function() {
-      const links = Array.from(document.querySelectorAll('.icon-nav a'));
-      const ids = links.map(a => a.getAttribute('href')).filter(h => h.startsWith('#'));
-      const sections = ids.map(id => document.querySelector(id)).filter(Boolean);
-
-      const activate = (id) => {
-        links.forEach(a => {
-          if (a.getAttribute('href') === id) {
-            a.style.borderColor = 'var(--border)';
-            a.style.boxShadow = '0 6px 18px var(--shadow)';
-          } else {
-            a.style.borderColor = 'var(--soft-border)';
-            a.style.boxShadow = 'none';
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            activate('#' + entry.target.id);
-          }
-        });
-      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.2 });
-
-      sections.forEach(sec => observer.observe(sec));
-    })();
-
-    // Exportar PDF com resumo dos projetos
-    (function() {
-      const btn = document.getElementById('exportPDF');
-      if (!btn) return;
-      btn.addEventListener('click', () => {
-        const { jsPDF } = window.jspdf || {};
-        if (!jsPDF) return alert('PDF: biblioteca não carregada. Tente novamente.');
-        const doc = new jsPDF();
-        doc.setFontSize(18);
-        doc.text('Portfólio de TI do Gustavo', 20, 20);
-
-        let y = 34;
-        doc.setFontSize(12);
-        doc.text('Resumo profissional:', 20, y);
-        y += 8;
-        doc.setFontSize(11);
-        doc.text('Suporte Técnico, Documentação e Engenharia de Prompt.', 20, y);
-        y += 14;
-
-        doc.setFontSize(12);
-        doc.text('Projetos:', 20, y);
-        y += 8;
-
-        const cards = document.querySelectorAll('#projetos .card');
-        cards.forEach((card, i) => {
-          const title = card.querySelector('h3, h2')?.textContent?.trim() || 'Projeto';
-          const lines = Array.from(card.querySelectorAll('li')).map(li => '- ' + li.textContent.trim());
-          doc.setFontSize(11);
-          doc.text(`${i + 1}. ${title}`, 20, y);
-          y += 8;
-          lines.forEach(line => {
-            if (y > 270) { doc.addPage(); y = 20; }
-            doc.text(line, 24, y);
-            y += 6;
-          });
-          y += 4;
-          if (y > 270) { doc.addPage(); y = 20; }
-        });
-
-        doc.save('portfolio_TI_Gustavo.pdf');
-      });
-    })();
-
-    // Foco acessível ao navegar por âncoras (padrão skip-link)
-    (function() {
-      const hashFocus = (event) => {
-        if (event.target.hash) {
-          const el = document.querySelector(event.target.hash);
-          if (el) {
-            el.setAttribute('tabindex', '-1');
-            el.focus({ preventScroll: true });
-            setTimeout(() => el.removeAttribute('tabindex'), 500);
-          }
-        }
-      };
-      document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', hashFocus));
-    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-</html>
+                                         </html>
