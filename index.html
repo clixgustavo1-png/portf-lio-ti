@@ -43,3 +43,89 @@
     /* Terminal */
     #terminal {
       background-color: #000;
+      color: #00ff99;
+      padding: 15px;
+      border-radius: 5px;
+      height: 200px;
+      overflow-y: auto;
+      margin-top: 20px;
+    }
+    #input {
+      width: 100%;
+      background: #000;
+      border: none;
+      color: #00ff99;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Programação para Iniciantes</h1>
+    <p>Aprenda a programar do zero 🚀</p>
+  </header>
+  <main>
+    <section>
+      <h2>Primeiros Passos</h2>
+      <p>Comece entendendo lógica de programação, variáveis e estruturas de controle. 
+      Recomendo iniciar com Python pela simplicidade da linguagem.</p>
+    </section>
+    <section>
+      <h2>Recursos Úteis</h2>
+      <ul>
+        <li><a href="https://www.python.org/">Site oficial do Python</a></li>
+        <li><a href="https://developer.mozilla.org/pt-BR/">Documentação da MDN</a></li>
+        <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Terminal Interativo</h2>
+      <div id="terminal"></div>
+      <input id="input" placeholder="Digite um comando...">
+    </section>
+    <section>
+      <h2>Contato</h2>
+      <p>📧 gustavo.oliveira@youbpotech.com.br</p>
+    </section>
+  </main>
+  <footer>
+    <p>Feito com 💻 e café ☕</p>
+  </footer>
+
+  <script>
+    const terminal = document.getElementById('terminal');
+    const input = document.getElementById('input');
+
+    const comandos = {
+      help: "Comandos disponíveis: help, sobre, contato, python, clear",
+      sobre: "Este site foi criado para iniciantes em programação.",
+      contato: "Email: gustavo.oliveira@youbpotech.com.br",
+      python: "Python é uma linguagem ótima para começar! Exemplo: print('Olá, mundo!')",
+      clear: "clear"
+    };
+
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const valor = input.value.trim();
+        if (valor) {
+          if (comandos[valor]) {
+            if (valor === "clear") {
+              terminal.innerHTML = "";
+            } else {
+              terminal.innerHTML += "<div>> " + valor + "</div>";
+              terminal.innerHTML += "<div>" + comandos[valor] + "</div>";
+            }
+          } else {
+            terminal.innerHTML += "<div>> " + valor + "</div>";
+            terminal.innerHTML += "<div>Comando não reconhecido. Digite 'help'.</div>";
+          }
+          terminal.scrollTop = terminal.scrollHeight;
+          input.value = "";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
